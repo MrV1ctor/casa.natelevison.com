@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Casa Project Site</title>
 </head>
+
 <body>
 
     <header>
@@ -15,23 +17,57 @@
             <span>Welcome, </span>
             <span id="custom"></span>!
         </div>
+        <p>This is a completely OFFLINE web page.
+            <br>No data or files are collected or stored.
+        </p>
+        <div class="calltoactions">
+            <button id="help"><i class="ctai fa-solid fa-circle-question"></i>Help</button>
+            <a href="mailto:juhl@pascack.org">
+                <button id="contact"><i class="ctai fa-solid fa-paper-plane"></i>Contact</button>
+            </a>
+        </div>
     </header>
 
     <main>
-        <p>Privacy/Security policy: this is a completely OFFLINE web page. You can turn off your internet after loading into the page.</p>
-    
-        <div>
-            <i class="fa-solid fa-file"></i>
-            <label for="key">Key File: </label>
-            <input id="key" type="file">
+        <div class="fields">
+            <fieldset>
+                <legend>Key File(s)</legend>
+		<label for="key">
+			<i class="fa-solid fa-file"></i>
+			<input id="key" type="file" accept=".csv,.xls" multiple>
+		</label>
+            </fieldset>
+            <fieldset>
+                <legend>Student File(s)</legend>
+		<label for="stu">
+			<i class="fa-solid fa-file"></i>
+			<input id="stu" type="file" accept=".csv,.xls" multiple>                                                                                                           
+		</label>
+            </fieldset>
         </div>
-        <div>
-            <i class="fa-solid fa-file"></i>
-            <label for="key">Student(s) File: </label>
-            <input id="key" type="file">
+        <div class="fields">
+            <fieldset>
+                <legend>Create Report</legend>
+                <button>Scan</button>
+                <select id="priv-opt">
+                    <option value="real">Real names & real ids</option>
+                    <option value="hidden">Fake names & real ids</option>
+                    <option value="fake">Fake names & fake ids</option>
+                </select>
+            </fieldset>
+            <fieldset disabled>
+                <legend>View Options</legend>
+                <select>
+                    <option value="">Select Student...</option>
+                </select>
+                <select>
+                    <option value="">Sort by...</option>
+                </select>
+            </fieldset>
         </div>
     </main>
 
 </body>
 <script src="script.js"></script>
+
 </html>

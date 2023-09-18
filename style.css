@@ -1,25 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans&display=swap');
 
+:root {
+    --c1: #D48166;
+    --c4: #d15f38;
+    --c2: #373a36;
+    --c3: #e6e2dd;
+}
+
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
 .title {
-    text-align: center;
     font-size: 40px;
-    padding: 10px;
+    color: var(--c2);
 }
 
 header {
-    height: 100px;
-    background-color: #c193db;
+    background-image: url("https://static.natelevison.com/casa-hero.jpg");
+    padding: 60px;
+    border-bottom: 1px solid var(--c2);
+    background-size: cover;
+    text-align: center;
+}
+
+.calltoactions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.calltoactions button {
+    padding: 10px 18px 10px 18px;
+    width: 120px;
     margin: 10px;
-    
+    margin-top: 0px;
+    background-color: var(--c1);
+    color: var(--c3);
+    border: 1px solid var(--c2);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-size: 16px;
+}
+
+.ctai {
+    margin-right: 4px;
+}
+
+.calltoactions button:hover {
+    background-color: var(--c4);
+    cursor: pointer;
 }
 
 body {
+    background-color: var(--c3);
+    color: var(--c2);
     width: 100%;
     height: 100%;
-    font-family: 'Work Sans', sans-serif;
     margin: 0px;
 }
 
 main {
     padding: 10px;
+}
+
+.fields {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: 1px solid var(--c2);
+    border-radius: 5px;
+    margin: 0px 10px;
+    width: 20%;
+    max-width: 20%;
 }

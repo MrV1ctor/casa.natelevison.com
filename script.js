@@ -4,17 +4,23 @@ const opts = ["Counselors", "Administrators", "Students", "Everyone"]
 let curWord = 0;
 let curLetter = 0;
 let waiting = false;
+let interacted = false;
 
-const betweenWords = 200;
-const betweenLoops = 400;
+const betweenWords = 400;
+const betweenLoops = 1000;
 const betweenLetters = 100;
-setInterval(() => {
+const mainInterval = setInterval(() => {
+    const wait = Math.random() * 30;
     setTimeout(() => {
         if (waiting) return;
         curLetter++;
-        console.log("Word: " + curWord + ". Letter: " + curLetter + ".")
         if (curWord >= opts.length) {
             waiting = true;
+            if (interacted) {
+                clearInterval(mainInterval);
+                return;
+            }
+            
             setTimeout(() => {
                 waiting = false;
                 curWord = 0;
@@ -30,5 +36,10 @@ setInterval(() => {
             }, betweenWords)
         }
         custom.innerText = opts[curWord].substring(0, curLetter);
-    }, Math.random() * betweenLetters);
+    }, wait);
 }, betweenLetters)
+
+// on document interacted
+document.addEventListener("click", () => {
+    interacted = true;
+})
