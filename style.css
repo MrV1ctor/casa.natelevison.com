@@ -5,23 +5,38 @@
     --c4: #d15f38;
     --c2: #373a36;
     --c3: #e6e2dd;
+
+    font-size: 10px;
+}
+
+body {
+    font-size: 16px;
 }
 
 * {
     font-family: 'Work Sans', sans-serif;
 }
 
-.title {
+.hero-title {
+    opacity: 0;
     font-size: 40px;
     color: var(--c2);
+    position: relative;
+    animation: from-top 0.75s ease-in-out 0.1s forwards;
 }
 
-header {
-    background-image: url("https://static.natelevison.com/casa-hero.jpg");
+.hero-banner {
+    background-image: url("./assets/img/casa-hero.jpg");
     padding: 60px;
     border-bottom: 1px solid var(--c2);
     background-size: cover;
     text-align: center;
+}
+
+.hero-text {
+    opacity: 0;
+    position: relative;
+    animation: from-top 0.75s ease-in-out 0.1s forwards;
 }
 
 .calltoactions {
@@ -77,6 +92,52 @@ fieldset {
     border: 1px solid var(--c2);
     border-radius: 5px;
     margin: 0px 10px;
-    width: 20%;
-    max-width: 20%;
+    width: 30rem;
+    min-width: 25%;
+}
+
+@media (max-width: 715px) {
+    .fields {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    fieldset {
+        border: 1px solid var(--c2);
+        border-radius: 5px;
+        margin: 0px 10px;
+        width: 30rem;
+        min-width: 85%;
+    }
+}
+
+fieldset:nth-child(odd) {
+    opacity: 0;
+    position: relative;
+    animation: from-left 0.75s ease-in-out 0.1s forwards;
+}
+
+fieldset:nth-child(even) {
+    opacity: 0;
+    position: relative;
+    animation: from-right 0.75s ease-in-out 0.1s forwards;
+
+}
+
+@keyframes from-top {
+    from { opacity: 0; top: -200px }
+    to { opacity: 1; top: 0px }
+}
+
+@keyframes from-left {
+    from { opacity: 0; left: -400px }
+    to { opacity: 1; left: 0px }
+}
+
+@keyframes from-right {
+    from { opacity: 0; right: -400px }
+    to { opacity: 1; right: 0px }
 }

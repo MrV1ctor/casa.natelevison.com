@@ -1,5 +1,5 @@
 const custom = document.querySelector("#custom");
-const opts = ["Counselors", "Administrators", "Students", "Everyone"]
+const opts = ["Counselors!", "Administrators!", "Students!", "Everyone!"]
 
 let curWord = 0;
 let curLetter = 0;
